@@ -1,0 +1,70 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- Server:
+    - Gitlab:
+        icon: gitlab.png
+        href: http://192.168.104.217:8929/
+        description: for sdnn code ci test server and code review
+        ping: http://192.168.104.217:8929/
+        server: sdnn-docker
+        container: gitlab
+
+    - Harbor:
+        icon: harbor.png
+        href: http://192.168.104.217:9080/
+        description: docker image server
+        ping: http://192.168.104.217:9080/
+        server: sdnn-docker
+        container: nginx
+
+    - Gerrit:
+        icon: si-git-#F05032
+        href: http://gerrit.semidrive.net:8081/
+        description: semidrive code repository
+        ping: http://gerrit.semidrive.net:8081/
+
+    - Grok:
+        icon: si-ngrok-#1F1E37
+        href: http://sh-opengrok.semidrive.cc:8080/source/
+        description: semidrive code review
+        ping: http://sh-opengrok.semidrive.cc:8080/source/
+
+- Docs:
+    - SDNN:
+        icon: si-onnx-#005CED
+        href: http://192.168.104.217:9090/
+        description: sdnn doc
+        ping: http://192.168.104.217:9090/
+
+    - CVEngine:
+        icon: si-opencv-#5C3EE8
+        href: http://10.18.200.24:8088/CN/
+        description: cv engine doc
+        ping: http://10.18.200.24:8088/CN/
+
+- Files:
+    - Tools:
+        icon: si-retool-#3D3D3D
+        href: http://192.168.104.217:8090/
+        description: public sdnn tools and toolchain
+    - ModelZoo:
+        icon: si-zorin-#15A6F0
+        href: http://192.168.104.217:8092/
+        description: model zoo
+
+- Manage:
+    - Portainer:
+        icon: portainer.png
+        href: http://192.168.104.217:9000/
+        description: docker manage server
+        showStats: true
+        server: sdnn-docker
+        container: portainer
+        widget:
+            type: portainer
+            url: http://192.168.104.217:9000
+            env: 2
+            key: ptr_QT/701QirumrvyTR+RoZrhB+MCUgRYqrJYQ6C0DqzUU=
+

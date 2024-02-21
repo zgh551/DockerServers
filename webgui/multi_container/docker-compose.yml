@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  nicegui:
+    image: zgh551/gui:0.01
+    container_name: nice_gui
+    ports:
+      - "8088:8080"
+    volumes:
+      - /workspace/guohua.zhu/gerrit/webgui/client:/app
+    environment:
+      - TCP_IP=192.168.104.217
+      - PUID=738 # change this to your user id
+      - PGID=738 # change this to your group id
+  sdnn:
+    image: zgh551/aipu:r1p2.0103-cpu
+    container_name: sdnn_dev
+    volumes:
+      - /workspace/guohua.zhu/gerrit/webgui:/workspace
+    ports:
+      - "4242:4242"
+    tty: true

@@ -1,0 +1,19 @@
+version: "3.6"
+services:
+  web:
+    image: gitlab/gitlab-ce:rc
+    container_name: gitlab
+    restart: always
+    hostname: '192.168.104.217'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://192.168.104.217:8929'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2224
+    volumes:
+      - /workspace/share/gitlab/config:/etc/gitlab
+      - /workspace/share/gitlab/log:/var/log/gitlab
+      - /workspace/share/gitlab/data:/var/opt/gitlab
+    ports:
+      - "8929:8929"
+      - "2224:22"
+    shm_size: '256m'

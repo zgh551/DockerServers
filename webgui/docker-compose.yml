@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  sdnn:
+    image: zgh551/aipu:r1p2.0103-cpu
+    container_name: sdnn_dev
+    volumes:
+      - /workspace/guohua.zhu/gerrit/webgui:/workspace
+    ports:
+      - "8088:8080"
+    environment:
+      - PUID=738 # change this to your user id
+      - PGID=738 # change this to your group id
+    tty: true

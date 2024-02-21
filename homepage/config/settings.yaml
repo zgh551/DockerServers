@@ -1,0 +1,36 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/settings
+
+#language: zh-CN
+title: SDNN Homepage
+headerStyle: underlined
+background:
+  image: https://images.unsplash.com/photo-1502790671504-542ad42d5189?auto=format&fit=crop&w=2560&q=80
+  blur: sm
+  #saturate: 50
+  #brightness: 50
+  opacity: 50
+useEqualHeights: true
+hideVersion: true
+showStats: true
+logpath: /workspace/share/homepage_log
+
+layout:
+  Server:
+    style: row
+    columns: 2
+  Docs:
+    style: row
+    columns: 2
+  Files:
+    style: row
+    columns: 2
+  Manage:
+    style: row
+    columns: 1
+
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey
