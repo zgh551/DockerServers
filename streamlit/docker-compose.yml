@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  benchmark:
+    image: streamlit:v0.0.1
+    restart: unless-stopped
+    container_name: sdnn_benchmark
+    volumes:
+      - /workspace:/workspace
+    ports:
+      - "8501:8501"
+    entrypoint: /workspace/guohua.zhu/github/benchmark_gui/run.sh
+    tty: true
+

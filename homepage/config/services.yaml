@@ -34,7 +34,7 @@
 - SDNN:
     - Benchmark:
         icon: si-plotly-#3F4F75
-        href: http://192.168.104.217:9010
+        href: http://192.168.104.217:8501
         description: neural networks model benchmark and accuracy auto evaluation framework
     - Database:
         icon: si-mongodb-#47A248
