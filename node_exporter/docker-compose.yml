@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  node-exporter:
+    restart: unless-stopped
+    container_name: node-exporter
+    image: bitnami/node-exporter:latest
+    ports:
+      - 9100:9100
+    environment:
+      - TZ=Asia/Shanghai
