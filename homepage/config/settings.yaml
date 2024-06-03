@@ -20,6 +20,9 @@ layout:
   Server:
     style: row
     columns: 2
+  SDNN:
+    style: row
+    columns: 2
   Docs:
     style: row
     columns: 2

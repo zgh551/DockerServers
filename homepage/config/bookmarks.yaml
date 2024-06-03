@@ -4,10 +4,15 @@
 
 - Support System:
     - Semidrive:
-        - abbr: SD
+        - abbr: SDRV
           href: https://support.semidrive.com/
 
     - ARM:
         - icon: si-arm-#0091BD
           href: https://support.armchina.com/servicedesk/customer/user/requests?status=open
+
+- Tools:
+    - 飞书文档转换:
+        - icon: si-googledocs-#4285F4
+          href: http://10.18.10.240:8080/view/DocBuild/job/feishudoc2pdf/
 
