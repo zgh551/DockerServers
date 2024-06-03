@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    networks:
+      - mongodb_network
+    volumes:
+      - /workspace/share/MongoDB/data:/data/db
+      - /workspace/share/MongoDB/logs:/data/logs
+        #- ./config:/data/configdb
+    ports:
+      - 27017:27017
+    environment:
+      TZ: Asia/Shanghai
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+        #commandcommand: mongod --config /etc/mongo/mongod.conf
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    networks:
+      - mongodb_network
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_SERVER: mongodb
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: mongoexpress
+      ME_CONFIG_OPTIONS_EDITORTHEME: 3024-night
+      #ME_CONFIG_MONGODB_ENABLE_ADMIN: "true"
+      #ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+networks:
+  mongodb_network:
