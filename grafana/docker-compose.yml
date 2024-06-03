@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  grafana:
+    restart: unless-stopped
+    container_name: grafana
+    image: grafana/grafana:latest
+    ports:
+      - 3090:3000
+    volumes:
+      - grafana_storage:/var/lib/grafana
+    environment:
+      - TZ=Asia/Shanghai
+      - GF_LOG_LEVEL=debug
+
+volumes:
+  grafana_storage: {}
