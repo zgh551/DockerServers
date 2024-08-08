@@ -5,17 +5,17 @@
 - Server:
     - Gitlab:
         icon: gitlab.png
-        href: http://192.168.104.217:8929/
+        href: http://192.168.200.251:8929/
         description: for sdnn code ci test server and code review
-        ping: http://192.168.104.217:8929/
+        ping: http://192.168.200.251:8929/
         server: sdnn-docker
         container: gitlab
 
     - Harbor:
         icon: harbor.png
-        href: http://192.168.104.217:9080/
+        href: http://192.168.200.251:9080/
         description: docker image manage server
-        ping: http://192.168.104.217:9080/
+        ping: http://192.168.200.251:9080/
         server: sdnn-docker
         container: nginx
 
@@ -34,19 +34,19 @@
 - SDNN:
     - Benchmark:
         icon: si-plotly-#3F4F75
-        href: http://192.168.104.217:8501
+        href: http://192.168.200.251:8501
         description: neural networks model benchmark and accuracy auto evaluation framework
     - Database:
         icon: si-mongodb-#47A248
-        href: http://192.168.104.217:8081
+        href: http://192.168.200.251:8081
         description: database for store and query benchmark and accuracy data
 
 - Docs:
     - SDNN:
         icon: si-onnx-#005CED
-        href: http://192.168.104.217:9090/
+        href: http://192.168.200.251:9090/
         description: document for sdnn software stack
-        ping: http://192.168.104.217:9090/
+        ping: http://192.168.200.251:9090/
 
     - CVEngine:
         icon: si-opencv-#5C3EE8
@@ -57,24 +57,24 @@
 - Files:
     - Tools:
         icon: si-retool-#3D3D3D
-        href: http://192.168.104.217:8090/
+        href: http://192.168.200.251:8090/
         description: Public sdnn tools and toolchain
     - ModelZoo:
         icon: si-zorin-#15A6F0
-        href: http://192.168.104.217:8092/
+        href: http://192.168.200.251:8092/
         description: Public Model Zoo
 
 - Manage:
     - Portainer:
         icon: portainer.png
-        href: http://192.168.104.217:9000/
+        href: http://192.168.200.251:9000/
         description: docker manage server
         showStats: true
         server: sdnn-docker
         container: portainer
         widget:
             type: portainer
-            url: http://192.168.104.217:9000
+            url: http://192.168.200.251:9000
             env: 2
             key: ptr_QT/701QirumrvyTR+RoZrhB+MCUgRYqrJYQ6C0DqzUU=
 

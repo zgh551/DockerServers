@@ -8,6 +8,8 @@ services:
         - 11434:11434
     volumes:
       - ollama:/root/.ollama
+    networks:
+      - ollama-net
     deploy:
       resources:
         reservations:
@@ -15,6 +17,15 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+
+networks:
+  ollama-net:
+    driver: bridge
+    ipam:
+      driver: "default"
+      config:
+        - subnet: 172.27.0.0/16
+          gateway: 172.27.0.1
 
 volumes:
   ollama:
