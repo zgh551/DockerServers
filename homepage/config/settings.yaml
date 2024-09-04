@@ -17,7 +17,7 @@ showStats: true
 logpath: /workspace/share/homepage_log
 
 layout:
-  Server:
+  Code:
     style: row
     columns: 2
   SDNN:
@@ -29,6 +29,12 @@ layout:
   Files:
     style: row
     columns: 2
+  AI Tools:
+    style: row
+    columns: 2
+  Server:
+    style: row
+    columns: 1
   Manage:
     style: row
     columns: 1

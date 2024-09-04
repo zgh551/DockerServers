@@ -1,0 +1,35 @@
+version: "3.3"
+
+services:
+  Xinference:
+    image: xprobe/xinference:v0.14.3
+    restart: unless-stopped
+    container_name: Xinference
+    ports:
+      - 9997:9997
+    volumes:
+      - /workspace/share:/root
+      - /workspace/share/.xinference:/root/.xinference
+      - /workspace/share/.cache/huggingface:/root/.cache/huggingface
+      - /workspace/share/.cache/modelscope:/root/.cache/modelscope
+    command: xinference-local -H 0.0.0.0
+    environment:
+      - XINFERENCE_MODEL_SRC=modelscope
+    networks:
+      - xinference-net
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+networks:
+  xinference-net:
+    driver: bridge
+    ipam:
+      driver: "default"
+      config:
+        - subnet: 172.29.0.0/16
+          gateway: 172.29.0.1

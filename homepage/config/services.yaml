@@ -2,23 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/latest/configs/services
 
-- Server:
-    - Gitlab:
-        icon: gitlab.png
-        href: http://192.168.200.251:8929/
-        description: for sdnn code ci test server and code review
-        ping: http://192.168.200.251:8929/
-        server: sdnn-docker
-        container: gitlab
-
-    - Harbor:
-        icon: harbor.png
-        href: http://192.168.200.251:9080/
-        description: docker image manage server
-        ping: http://192.168.200.251:9080/
-        server: sdnn-docker
-        container: nginx
-
+- Code:
     - Gerrit:
         icon: si-git-#F05032
         href: http://gerrit.semidrive.net:8081/
@@ -63,6 +47,37 @@
         icon: si-zorin-#15A6F0
         href: http://192.168.200.251:8092/
         description: Public Model Zoo
+
+- AI Tools:
+    - Xinference:
+        icon: si-xdotorg-#F28834
+        href: http://192.168.200.251:9997/ui/#/launch_model/custom/llm
+        description: Xorbits Inference(Xinference) is a powerful and versatile library designed to serve language, speech recognition, and multimodal models.
+    - Dify:
+        icon: si-d-#13ADC7
+        href: http://192.168.200.251/apps
+        description: Dify is an open-source LLM app development platform. Its intuitive interface combines AI workflow, RAG pipeline, agent capabilities, model management, observability features and more, letting you quickly go from prototype to production.
+    - SDNN Assistant:
+        icon: si-googleassistant-#4285F4
+        href: http://192.168.200.251/chat/KUN8YlYs5IFTUM4x
+        description: sdnn doc and question assistant
+
+- Server:
+    #- Gitlab:
+    #    icon: gitlab.png
+    #    href: http://192.168.200.251:8929/
+    #    description: for sdnn code ci test server and code review
+    #    ping: http://192.168.200.251:8929/
+    #    server: sdnn-docker
+    #    container: gitlab
+
+    - Harbor:
+        icon: harbor.png
+        href: http://192.168.200.251:9080/
+        description: docker image manage server
+        ping: http://192.168.200.251:9080/
+        server: sdnn-docker
+        container: nginx
 
 - Manage:
     - Portainer:
